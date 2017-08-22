@@ -1,1 +1,50 @@
 {% extends "base.html" %}
+
+
+
+{% block css %}
+	<link rel="stylesheet" href="../../static/user/css/login.css">
+{% endblock %}
+
+
+{% block navOptions %}
+	<div class = "col s4 navLink searchOption">
+		<a class = "navLinkTag" href = "/" target = __blank> Search </a>
+	</div>
+	
+	<div class = "col s4 navLink foodOption">
+		<a class = "navLinkTag" href = "/" target = __blank> Food </a>
+	</div>
+	<div class = "col s4 navLink chefOption">
+		<a class = "navLinkTag" href = "/" target = __blank> Chef </a>
+	</div>
+{% endblock %}
+
+{% block mainStruct %}
+	<div class = "row loginSignUpRow">
+		<div class = "col s7 topDishes"></div>
+		<div class = "col s5 signUpLoginSection">
+			<input type="submit" id="switchButton" value="Login">
+			<h3 id="formTitle"> Sign Up </h3>
+			<form action = "/register" method = 'POST' id="signUpForm" class="loginPageForm">
+					{% csrf_token %}
+					{{ rform.as_p }}
+				<input type='submit' value="Submit" class = "submitButton">
+			</form>
+			<form action = "/home" style="display:none" class="loginPageForm" method = 'POST' id="loginForm">
+				{% csrf_token %}
+				{{ lform.as_p }}
+			<input type='submit' value="Enter" class = "submitButton">
+			</form>
+		</div>
+
+	</div>
+{% endblock %}}
+
+
+{% block js %}
+	<script src = "../../static/user/js/login.js"></script>
+{% endblock %}
+
+
+

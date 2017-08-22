@@ -6,12 +6,49 @@
 		<title> HomeFood </title>
 		<link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.css">
 		<link rel="stylesheet" href="/static/user/css/base.css">
+
+		{% block css %}
+		{% endblock %}
 	</head>
 
 
 
 	<body>
-		<h1> Welcome to Home Catering! </h1>
+		<div class="row navBar">
+			<div class="col s4 websiteTitleCol">
+				<div id = "titleWords">
+					<span id="home">Home </span>
+					<span id="food">Food </span>
+				</div>
+			</div>
+			<div class="col s8 navBarRightCol">
+				<div class="row navOptions">
+					{% block navOptions %}
+
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+
+		<div class = "row mainStructRow">
+			<div class = "col s1 promotionSpace">
+			</div>
+			<div class = "col s10 mainStruct">
+				{% block mainStruct %}
+				{% endblock %}
+			</div>
+			<div class = "col s1 promotionSpace">
+			</div>
+		</div>
+
+		<div class = "row bottomBar">
+			HomeFood LLC, Contact Info: +1 (012) 345-6789
+		</div>
+
+
+
+		{% block js %}
+		{% endblock %}
 	</body>
 
 

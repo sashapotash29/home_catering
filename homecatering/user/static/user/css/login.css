@@ -1,0 +1,50 @@
+.navLink{
+
+	height:100%;
+	text-align: center;
+	vertical-align: center;
+
+
+}
+
+
+.navLinkTag{
+
+	font-size: 5vh;
+
+}
+
+.signUpLoginSection{
+/*
+	display:flex;
+	align-items: center;
+	justify-content: center;*/
+
+}
+
+
+.loginPageForm{
+
+	margin-top: 2%;
+	margin-right: 2%;
+	border: solid black 1px;
+
+}
+
+.loginPageForm p{margin:0;padding:0;padding-left:1%;padding-right:1%;}
+.loginPageForm input{margin:0;padding:0; width: 80%;}
+.loginPageForm span{display:none;}
+.loginPageForm ul{display:none;}
+
+#formTitle{
+	margin:0;
+	padding:0;
+	text-align: center;
+	text-decoration:underline;
+}
+
+#switchButton{
+	
+	margin-top: 1%;
+
+}
