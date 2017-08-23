@@ -35,8 +35,12 @@ def register(request):
 		print("Uhoh")
 
 def home(request):
-	print("login route")
-	args = {'rform':RegistrationForm(), 'lform':AuthenticationForm()}
-	return render(request,'user/login.html', args)
+	if request.method == "POST":
+		form = AuthenticationForm(request.POST)
+		if form.is_valid():
+			args = {'rform':RegistrationForm(), 'lform':AuthenticationForm()}
+			return render(request,'user/login.html', args)
+		else:
+			print("crapped out")
 
 
