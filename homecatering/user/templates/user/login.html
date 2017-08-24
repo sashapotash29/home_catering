@@ -22,10 +22,30 @@
 
 {% block mainStruct %}
 	<div class = "row loginSignUpRow">
-		<div class = "col s7 topDishes"></div>
+		<div class = "col s7 topDishes">
+			<ul id="topDishList">
+				<li class="dishLi">
+					<div class="card">
+            			<div class="card-image">
+              				<img class="dishImage" src="../../static/user/images/sample.jpg">
+              				<span class="card-title">Card Title</span>
+            			</div>
+	            		<div class="card-content">
+				            <p>I am a very simple card. I am good at containing small bits of information.
+				              I am convenient because I require little markup to use effectively.</p>
+	            		</div>
+			            <div class="card-action">
+			            	<a href="#">This is a link</a>
+			            </div>
+		            </div>
+				</li>
+				<li class="dishLi">Demo</li>
+			</ul>
+		</div>
 		<div class = "col s5 signUpLoginSection">
-			<input type="submit" id="switchButton" value="Login">
+			<a id="switchButton" value="Login">Sign Up</a>
 			<h3 id="formTitle"> Sign Up </h3>
+			<p id="errorMessage">{{lError_message}}</p>
 			<form action = "/register" method = 'POST' id="signUpForm" class="loginPageForm">
 					{% csrf_token %}
 					{{ rform.as_p }}
