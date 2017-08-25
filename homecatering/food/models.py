@@ -11,7 +11,7 @@ class Dish(models.Model):
 	cuisine = models.CharField(max_length=50)
 	description = models.CharField(max_length=50)
 	upload_date = models.DateField(auto_now_add = True)
-	images = models.ImageField(blank=True)
+	images = models.ImageField(upload_to="../static/food/images", blank=True)
 
 
 class Review(models.Model):

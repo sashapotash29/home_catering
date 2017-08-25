@@ -12,5 +12,7 @@ from django.contrib.auth.views import (
 
 urlpatterns = [
 	url(r'^dishes', views.return_dishes, name="allFood"),
+	url(r'^store', views.store_dishes, name="storeDishes"),
+	url(r'^top', views.recent_dishes, name="recent")
 
 ]
