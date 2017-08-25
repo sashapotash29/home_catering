@@ -3,6 +3,8 @@
 
 
 {% block css %}
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 	<link rel="stylesheet" href="../../static/user/css/login.css">
 {% endblock %}
 
@@ -24,7 +26,22 @@
 	<div class = "row loginSignUpRow">
 		<div class = "col s7 topDishes">
 			<ul id="topDishList">
-				<li class="dishLi">
+			<!-- <li class="dishLi"> -->
+				<!-- <div class="card">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Fish/A-G/clown-anemonefish-tentacles.ngsversion.1470600539619.adapt.1900.1.jpg">
+				    </div>
+				    <div class="card-content">
+				      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+				      <p><a href="#">This is a link</a></p>
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+				      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+				    </div>
+				  </div>
+			  </li>
+				 <li class="dishLi">
 					<div class="card">
             			<div class="card-image">
               				<img class="dishImage" src="../../static/user/images/sample.jpg">
@@ -39,7 +56,7 @@
 			            </div>
 		            </div>
 				</li>
-				<li class="dishLi">Demo</li>
+				<li class="dishLi">Demo</li> -->
 			</ul>
 		</div>
 		<div class = "col s5 signUpLoginSection">
@@ -63,6 +80,9 @@
 
 
 {% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
 	<script src = "../../static/user/js/login.js"></script>
 {% endblock %}
 

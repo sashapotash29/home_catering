@@ -54,6 +54,7 @@ def recent_dishes(request):
 		for dish in dishList:
 			dict1 = model_to_dict(dish)
 			dict1["images"] = dict1["images"].url
+			# print(dict1["images"].url)
 			print(type(dict1["images"]))
 			final["result"].append(dict1)
 		print(type(final["result"][0]["images"]))
