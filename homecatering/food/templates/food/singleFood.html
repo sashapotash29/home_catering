@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+
+{% block css %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="stylesheet" href="../../static/food/css/singleFood.css">
+{% endblock %}
+
+
+{% block mainStruct %}
+<div class="row pictureInfo">
+	<div class="col s6 pictureInfoCol" id="colPicture" data-food={{dishObj.id}}>
+		<h4>{{dishObj.dish_name}}</h4>
+		<img src="static/food/images/{{dishObj.images.url}}">
+	</div>
+	<div class="col s6 pictureInfoCol" id="colInfo">
+		<ul>
+			<li><span class="infoUlBullet">Description:</span> {{dishObj.description}}</li>
+			<li><span class="infoUlBullet">Cuisine:</span> {{dishObj.cuisine}}</li>
+			<li><span class="infoUlBullet">Upload Date:</span> {{dishObj.upload_date}}</li>
+			<li><span class="infoUlBullet">Chef:</span> 
+			<a>{{dishObj.user_id}}</a></li>
+		</ul>
+	</div>
+</div>
+<div class="row reviewUlMain">
+	<ul id="foodReviewsUl">
+		<li class = "singleReviewLi">
+			<div class="row review">
+				<div class="col s2 reviewProfPicCol">
+					<img src="{}">
+				</div>
+				<div class="col s10 reviewContentCol">
+					<div class ="card">
+
+					</div>
+				</div>
+			</div>
+		</li>
+
+		<li class = "singleReviewLi">
+			<div class="row review">
+				<div class="col s2 reviewProfPicCol">
+			        <div class="card">
+			            <div class="card-image">
+			              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq064X1wBftd_dkTx0k6KjBWHNv1K6j62Ck7it4MpZLzLl8Gh6">
+			            </div>
+<!-- 			            <div class="card-content">
+			              <p>I am a very simple card. I am good at containing small bits of information.
+			              I am convenient because I require little markup to use effectively.</p>
+			            </div> -->
+			            <div class="card-action">
+			              <a href="#">Person Name</a>
+			            </div>
+			        </div>
+				</div>
+				<div class="col s10 reviewContentCol">
+					<div class="card blue-grey darken-1">
+			            <div class="card-content white-text">
+			              <span class="card-title">Review from date: 09/02/2017</span>
+			              <p>I am a very simple card. I am good at containing small bits of information.
+			              I am convenient because I require little markup to use effectively.</p>
+			            </div>
+			            <div class="card-action">
+			              <a href="#">Check Out the User's Page!</a>
+			            </div>
+			          </div>
+					</div>
+				</div>
+		</li>
+	</ul>
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
+<script src="../../static/food/js/singleFood.js"></script>
+{% endblock %}

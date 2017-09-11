@@ -31,12 +31,13 @@ document.onreadystatechange = function () {
 	           if (xmlhttp.status == 200) {
 	                // alert(xmlhttp.responseText);
 	                JSONresponse = JSON.parse(xmlhttp.responseText)["result"];
-
+	                console.log(JSONresponse[0]);
 	                for (index in JSONresponse){
 	                	populateDemoDishes(JSONresponse[index]);
 
 
 	                }
+
 	           }
 	           else if (xmlhttp.status == 400) {
 	              alert('There was an error 400');
@@ -63,7 +64,7 @@ document.onreadystatechange = function () {
 		var cardImageDiv = document.createElement("div");
 		cardImageDiv.className = "card-image waves-effect waves-block waves-light";
 		var newImage = document.createElement("img");
-		newImage.src = "/static/food/images/" + info["images"];
+		newImage.src = "static/food/images/" + info["images"];
 		newImage.className = "activator dishImage";
 		cardImageDiv.appendChild(newImage);
 
@@ -78,7 +79,7 @@ document.onreadystatechange = function () {
 		contentSpan.appendChild(iDiv);
 		var pLinks = document.createElement("p");
 		var aTag = document.createElement("a");
-		aTag.href = "www.google.com";
+		aTag.href = "http://127.0.0.1:8000/food/id/"+info["id"];
 		aTag.innerHTML = "Click for more information!"
 		pLinks.appendChild(aTag);
 		cardContent.appendChild(contentSpan);

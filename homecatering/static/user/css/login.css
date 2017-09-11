@@ -48,3 +48,22 @@
 	margin-top: 1%;
 
 }
+
+.dishImage{
+	height:40%;
+	width:40%;
+
+}
+
+#topDishList li{
+	display:inline-block;
+
+}
+
+
+.dishLi{
+
+	width:40%;
+	margin: 2%;
+
+}

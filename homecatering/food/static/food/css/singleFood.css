@@ -1,0 +1,42 @@
+.pictureInfoCol{
+
+	height:100%;
+	border: solid pink 1px;
+
+}
+
+
+.reviewUlMain{
+
+	border-top: solid black 2px;
+	border-top-width: 80%;
+
+
+}
+
+
+.reviewProfPicCol{
+	
+	height:100%;
+	border: solid darkblue 1px;
+	
+
+}
+
+.reviewContentCol{
+
+	height:100%;
+	border: solid darkgreen 1px;
+	
+
+}
+
+.infoUlBullet{
+
+	font-weight: bold;
+	text-decoration: underline;
+	color:lightblue;
+
+}
+
+

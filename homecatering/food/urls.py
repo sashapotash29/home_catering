@@ -13,6 +13,9 @@ from django.contrib.auth.views import (
 urlpatterns = [
 	url(r'^dishes', views.return_dishes, name="allFood"),
 	url(r'^store', views.store_dishes, name="storeDishes"),
-	url(r'^top', views.recent_dishes, name="recent")
+	url(r'^top', views.recent_dishes, name="recent"),
+	url(r'^id/([0-9]{1,3})', views.single_dish, name="singledish"),
+	url(r'^reviews/([0-9]{1,3})', views.reviews, name="reviews"),
+
 
 ]

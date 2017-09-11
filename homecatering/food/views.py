@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from user.forms import RegistrationForm, EditAccountForm
+from django.contrib.auth.forms import (AuthenticationForm)
 from django.contrib.auth.models import User
 from django.forms.models import model_to_dict
 
-from .models import Dish
+from .models import Dish, Review
 
 import json
 from datetime import datetime, timedelta
@@ -54,20 +55,38 @@ def recent_dishes(request):
 		for dish in dishList:
 			dict1 = model_to_dict(dish)
 			dict1["images"] = dict1["images"].url
-			# print(dict1["images"].url)
-			print(type(dict1["images"]))
 			final["result"].append(dict1)
 		print(type(final["result"][0]["images"]))
-		# print(type(dict1["images"]))
-		# print("dir",dir(dict1["images"]))
 		return HttpResponse(json.dumps(final))
 	elif len(dishList) == 0:
 		dishList = Dish.objects.raw("SELECT * FROM food_dish LIMIT 10".format(fiveDaysAgo))
 	else:
 		print("dishQS has an error in Length")
 
+def single_dish(request, dish_id):
+	args={}
+	choiceDish = list(Dish.objects.raw("SELECT * FROM food_dish WHERE id = {}".format(dish_id)))
+	# print("choice dish",choiceDish)
+	if len(choiceDish) == 0: # NOTE Change the following to reRoute to home page.
+		error = "Dish was not found. Please try a different dish"
+		args = {'lform':AuthenticationForm(),'lError_message':error, 'rform': RegistrationForm()}
+		return render("user/login.html",args)
+	else:
+		args={"dishObj":choiceDish[0]}
+		print(choiceDish[0].images)
+		print(dir(choiceDish[0].images))
+		return render(request, "food/singleFood.html",args)
 
+def reviews(request, dish_id):
+	reviewObjs = list(Review.objects.raw("SELECT * FROM food_review WHERE dish_id_id = {}".format(dish_id)))
+	reviews = []
+	for review in reviewObjs:
+		reviewDict = model_to_dict(review)
+		reviews.append(reviewDict)
+	final = {"result": reviews}
+	lala = list(Dish.objects.raw("SELECT * FROM food_dish"))
+	for item in lala:
+		print(item.id, item.dish_name)
 
-
-
+	return HttpResponse(json.dumps(final))
 

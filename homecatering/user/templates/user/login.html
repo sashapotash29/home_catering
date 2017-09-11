@@ -9,7 +9,7 @@
 {% endblock %}
 
 
-{% block navOptions %}
+<!-- {% block navOptions %}
 	<div class = "col s4 navLink searchOption">
 		<a class = "navLinkTag" href = "/" target = __blank> Search </a>
 	</div>
@@ -20,14 +20,14 @@
 	<div class = "col s4 navLink chefOption">
 		<a class = "navLinkTag" href = "/" target = __blank> Chef </a>
 	</div>
-{% endblock %}
+{% endblock %} -->
 
 {% block mainStruct %}
 	<div class = "row loginSignUpRow">
 		<div class = "col s7 topDishes">
 			<ul id="topDishList">
 			<!-- <li class="dishLi"> -->
-				<!-- <div class="card">
+			<!-- 	<div class="card">
 				    <div class="card-image waves-effect waves-block waves-light">
 				      <img class="activator" src="http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Fish/A-G/clown-anemonefish-tentacles.ngsversion.1470600539619.adapt.1900.1.jpg">
 				    </div>
@@ -40,8 +40,8 @@
 				      <p>Here is some more information about this product that is only revealed once clicked on.</p>
 				    </div>
 				  </div>
-			  </li>
-				 <li class="dishLi">
+			  </li> -->
+				 <!-- <li class="dishLi">
 					<div class="card">
             			<div class="card-image">
               				<img class="dishImage" src="../../static/user/images/sample.jpg">
@@ -60,7 +60,7 @@
 			</ul>
 		</div>
 		<div class = "col s5 signUpLoginSection">
-			<a id="switchButton" value="Login">Sign Up</a>
+			<a id="switchButton" value="Login">Login</a>
 			<h3 id="formTitle"> Sign Up </h3>
 			<p id="errorMessage">{{lError_message}}</p>
 			<form action = "/register" method = 'POST' id="signUpForm" class="loginPageForm">
